@@ -1,0 +1,44 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Untitled</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="main.css" />
+        <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+        <!-- Place favicon.ico in the root directory -->
+        <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+        <script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">
+            You are using an <strong>outdated</strong> browser. Please
+            <a href="http://browsehappy.com/">upgrade your browser</a> to improve
+            your experience.
+            </p>
+        <![endif]-->
+        <div class="container">
+            <div class="left_quarter">
+                <h1><span id="stitches">0</span> / 10 stiches</h1>
+                <button class="fancy_button" role="button"
+                        _="on click put #stitches.innerText as Int + 1 into #stitches.innerText
+                               then if #stitches.innerText >= 10
+                               then put 0 into #stitches.innerText
+                               then increment #plushies.innerText end">
+                    clickity
+                </button>
+
+
+            </div>
+
+            <div class="right">
+                <h1><span id="plushies">0</span> plushies</h1>
+            </div>
+
+    </body>
+</html>

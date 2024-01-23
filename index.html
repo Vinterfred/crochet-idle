@@ -23,21 +23,27 @@
             </p>
         <![endif]-->
         <div class="container">
-            <div class="left_quarter">
+            <div class="left_quarter border">
                 <h1><span id="stitches">0</span> / 10 stiches</h1>
+                <h2><span>0</span> crochertz</h2>
                 <button class="fancy_button" role="button"
                         _="on click put #stitches.innerText as Int + 1 into #stitches.innerText
                                then if #stitches.innerText >= 10
                                then put 0 into #stitches.innerText
-                               then increment #plushies.innerText end">
-                    clickity
+                               then put #granny-squares.innerText as Int + 1 into #granny-squares.innerText end">
+                    crochet
                 </button>
 
 
             </div>
 
-            <div class="right">
-                <h1><span id="plushies">0</span> plushies</h1>
+            <div class="right_three_quarters">
+                <div class="left_three_quarters border">
+                    <h1><span id="granny-squares">0</span> granny squares</h1>
+                </div>
+                <div class="right_quarter border">
+                    <h1>Shop</h1>
+                </div>
             </div>
         </div>
 

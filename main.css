@@ -3,8 +3,16 @@
     width:100%;
 }
 .left_quarter {
-    width:25%;
+    width:24%;
     float:left;
+}
+.right_quarter {
+  width:25%;
+  float:right;
+}
+.left_three_quarters {
+  width:74%;
+  float:left;
 }
 .right_three_quarters {
     width:75%;
@@ -13,6 +21,9 @@
 .center {
     margin:0;
     left:50%;
+}
+.border {
+  border-style: outset;
 }
 
 body {background-color: #1e181e;}

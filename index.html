@@ -24,7 +24,11 @@
         <div class="container">
             <div class="left_quarter border">
                 <h1><span id="stitches">0</span> / 30 stiches</h1>
-                <h2><span id="Crochertz">0</span> crochertz</h2>
+                <h2><span id="Crochertz" _="init repeat forever if my.innerText as Float == 0 then wait 1s
+                                            else if my.innerText as Int <= 10
+                                            then wait (1 / my.innerText as Float)s then set #stitches.innerText to #stitches.innerText as Float + 1
+                                            else if my.innerText as Int > 10 then wait 100ms then set #stitches.innerText to #stitches.innerText as Float + (#Crochertz.innerText as float / 10)
+                                            ">0</span> crochertz</h2>
                 <button id="crochetbutton" role="button" hookness="1"
                         _="on click put #stitches.innerText as Float + @hookness as Float into #stitches.innerText
                                then if #stitches.innerText >= 30
@@ -42,14 +46,15 @@
                 </div>
                 <div class="right_quarter border">
                     <h1>Shop</h1>
-                    <button _="on click if #granny-squares.innerText as Int >= 50
-                                            then put #granny-squares.innerText as Int - 10 into #granny-squares.innerText
-                                            then set #crochetbutton's @hookness to 2
-                                            then remove me">Crochet hook: 50 g²</button>
+                    <button _="on click if #granny-squares.innerText as Int >= #HookCost.innerText as Int
+                                            then put #granny-squares.innerText as Int - #HookCost.innerText as Int into #granny-squares.innerText
+                                            then set #HookCost.innerText to #HookCost.innerText as Int * 2
+                                            then set #crochetbutton's @hookness to #crochetbutton's @hookness as Int + 1
+                                            then if #crochetbutton's @hookness >= 10 remove me">Crochet hook: <span class="buttonspan" id="HookCost">2</span> g²</button>
                     <button cost="10" _="on click if #granny-squares.innerText as Int >= @cost as Int
                                             then put #Crochertz.innerText as Float + 0.1 into #Crochertz.innerText
                                             then put #granny-squares.innerText as Int - @cost into #granny-squares.innerText
-                                            then put @cost as Float * 1.1 into @cost then put @cost into #CrochetinatorCost.innerText">
+                                            then put (@cost as Float * 1.1) as Int into @cost then put @cost into #CrochetinatorCost.innerText">
                         Crochetinator <span class="buttonspan" id="CrochetinatorIter">1</span>: <span class="buttonspan" id="CrochetinatorCost">10</span>g²
                     </button>
                 </div>

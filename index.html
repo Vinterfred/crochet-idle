@@ -24,11 +24,11 @@
         <div class="container">
             <div class="left_quarter border">
                 <h1><span id="stitches">0</span> / 30 stiches</h1>
-                <h2><span>0</span> crochertz</h2>
+                <h2><span id="Crochertz">0</span> crochertz</h2>
                 <button id="crochetbutton" role="button" hookness="1"
-                        _="on click put #stitches.innerText as Int + @hookness as Int into #stitches.innerText
+                        _="on click put #stitches.innerText as Float + @hookness as Float into #stitches.innerText
                                then if #stitches.innerText >= 30
-                               then put 0 into #stitches.innerText
+                               then put #stitches.innerText as Int - 30 into #stitches.innerText
                                then put #granny-squares.innerText as Int + 1 into #granny-squares.innerText end">
                     crochet
                 </button>
@@ -42,10 +42,16 @@
                 </div>
                 <div class="right_quarter border">
                     <h1>Shop</h1>
-                    <button _="on click if #granny-squares.innerText as Int >= 10
+                    <button _="on click if #granny-squares.innerText as Int >= 50
                                             then put #granny-squares.innerText as Int - 10 into #granny-squares.innerText
                                             then set #crochetbutton's @hookness to 2
-                                            then remove me">Crochet hook: 10 g²</button>
+                                            then remove me">Crochet hook: 50 g²</button>
+                    <button cost="10" _="on click if #granny-squares.innerText as Int >= @cost as Int
+                                            then put #Crochertz.innerText as Float + 0.1 into #Crochertz.innerText
+                                            then put #granny-squares.innerText as Int - @cost into #granny-squares.innerText
+                                            then put @cost as Float * 1.1 into @cost then put @cost into #CrochetinatorCost.innerText">
+                        Crochetinator <span class="buttonspan" id="CrochetinatorIter">1</span>: <span class="buttonspan" id="CrochetinatorCost">10</span>g²
+                    </button>
                 </div>
             </div>
         </div>

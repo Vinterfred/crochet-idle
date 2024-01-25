@@ -30,6 +30,9 @@ body {background-color: #1e181e;}
 * {text-align: center;
   color: #cfcfcf}
 
+.buttonspan {color: #000000}
+
+
 /* Fancy button grabbed from github mostly here for later reference for all the elements on it */
 button {
   appearance: none;

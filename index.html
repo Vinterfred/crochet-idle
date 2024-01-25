@@ -15,7 +15,7 @@
         <script type="text/hyperscript">
             init def stitchcheck()
                 if #stitches.innerText as Float >= #RequiredStitches.innerText as Int
-                    then set #stitches.innerText to #stitches.innerText as Float - #RequiredStitches.innerText as Int
+                    then set #stitches.innerText to 0 -- #stitches.innerText as Float - #RequiredStitches.innerText as Int
                     then set #granny-squares.innerText to #granny-squares.innerText as Int + 1
                 end
         </script>
@@ -35,7 +35,7 @@
                 <h2><span id="Crochertz" _="init repeat forever if my.innerText as Float == 0 then wait 2s
                                             else if my.innerText as Int <= 10
                                             then wait (1 / my.innerText as Float)s then set #stitches.innerText to #stitches.innerText as Float + 1 then stitchcheck()
-                                            else if my.innerText as Int > 10 then wait 100ms then set #stitches.innerText to #stitches.innerText as Float + (#Crochertz.innerText as float / 10) then stitchcheck()
+                                            else if my.innerText as Int > 10 then wait 100ms then set #stitches.innerText to ((#stitches.innerText as Float * 1000) + (#Crochertz.innerText as Float * 100)) / 1000 then stitchcheck()
                                             ">0</span> crochertz</h2>
                 <button id="crochetbutton" role="button" hookness="1"
                         _="on click put #stitches.innerText as Float + @hookness as Float into #stitches.innerText
